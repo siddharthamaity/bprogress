@@ -2,19 +2,19 @@
 
 ## 3.1.3
 
-### Minor Changes
+### Patch Changes
 
 - fix: add `.js` to next imports to fix package for `/pages` directory
 
 ## 3.1.2
 
-### Minor Changes
+### Patch Changes
 
 - fix: import `useRouter` from main
 
 ## 3.1.1
 
-### Minor Changes
+### Patch Changes
 
 - feat: import `AppProgressProvider` and `useRouter` from /app and `PagesProgressProvider` from /pages
 

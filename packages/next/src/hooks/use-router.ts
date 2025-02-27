@@ -1,6 +1,6 @@
 import { useCallback, useRef } from 'react';
 import { BProgress, isSameURL } from '@bprogress/core';
-import { useRouter as useNextRouter } from 'next/navigation';
+import { useRouter as useNextRouter } from 'next/navigation.js';
 import type { NavigateOptions } from 'next/dist/shared/lib/app-router-context.shared-runtime';
 import type {
   AppRouterProgressInstance,

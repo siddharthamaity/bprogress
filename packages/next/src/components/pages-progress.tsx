@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { isSameURL, isSameURLWithoutSearch } from '@bprogress/core';
 import { RouterProgressProps, useProgress, withMemo } from '@bprogress/react';
-import Router from 'next/router';
+import Router from 'next/router.js';
 
 const PagesProgressComponent = ({
   shallowRouting = false,

@@ -1,5 +1,11 @@
 # @bprogress/next
 
+## 3.1.3
+
+### Minor Changes
+
+- fix: add `.js` to next imports to fix package for `/pages` directory
+
 ## 3.1.2
 
 ### Minor Changes

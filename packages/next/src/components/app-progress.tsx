@@ -3,7 +3,7 @@ import {
   withMemo,
   type AnchorProgressProps,
 } from '@bprogress/react';
-import { usePathname, useSearchParams } from 'next/navigation';
+import { usePathname, useSearchParams } from 'next/navigation.js';
 
 const AppProgressComponent = (props: AnchorProgressProps) => {
   const pathname = usePathname();

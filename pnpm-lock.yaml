@@ -213,8 +213,8 @@ importers:
   apps/pages-app-dir:
     dependencies:
       '@bprogress/next':
-        specifier: workspace:*
-        version: link:../../packages/next
+        specifier: 3.1.2
+        version: 3.1.2(next@15.0.3(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
       '@workspace/ui':
         specifier: workspace:*
         version: link:../../packages/ui
@@ -1369,6 +1369,13 @@ packages:
 
   '@bprogress/core@1.1.18':
     resolution: {integrity: sha512-+khsDSJ7jv1L9LU34jnEsNqY6tXViSZDOeoxd09Ws8zVXzFjatRzWwBpiDQqTqyVZc0nlOxkkumFDtAgDJwY2A==}
+
+  '@bprogress/next@3.1.2':
+    resolution: {integrity: sha512-wsrmGjJIrjqMJuWqyeq/NUphELcY5jaAR8gtcuo4pK9Ph29FItMvtJm8Iea/aOHVOn5pAz8xeRL9aGHHLyHkEw==}
+    peerDependencies:
+      next: '>=13.0.0'
+      react: '>=18.0.0'
+      react-dom: '>=18.0.0'
 
   '@bprogress/react@1.1.4':
     resolution: {integrity: sha512-faAGNitciEk5vQfu5eoojFZqHLAe/oB4OeEj5zO15kTBZyLy1v9vs1BOX2u/YYnNx6/IeZQlBvENF4nZwjbZSw==}
@@ -11686,6 +11693,14 @@ snapshots:
   '@bcoe/v8-coverage@0.2.3': {}
 
   '@bprogress/core@1.1.18': {}
+
+  '@bprogress/next@3.1.2(next@15.0.3(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)':
+    dependencies:
+      '@bprogress/core': 1.1.18
+      '@bprogress/react': 1.1.4(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
+      next: 15.0.3(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
+      react: 19.0.0
+      react-dom: 19.0.0(react@19.0.0)
 
   '@bprogress/react@1.1.4(react-dom@19.0.0(react@19.0.0))(react@19.0.0)':
     dependencies:

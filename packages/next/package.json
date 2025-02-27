@@ -1,6 +1,6 @@
 {
   "name": "@bprogress/next",
-  "version": "3.1.0",
+  "version": "3.1.1",
   "type": "module",
   "description": "Progress bar for Next.js compatible with new app directory",
   "repository": {
@@ -17,6 +17,17 @@
   "files": [
     "dist"
   ],
+  "exports": {
+    ".": {
+      "import": "./dist/index.js"
+    },
+    "./app": {
+      "import": "./dist/app.js"
+    },
+    "./pages": {
+      "import": "./dist/pages.js"
+    }
+  },
   "scripts": {
     "lint": "eslint . --max-warnings 0",
     "build": "tsup",

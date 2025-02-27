@@ -1,7 +1,8 @@
 'use client';
 
 import Link from 'next/link';
-import { useProgress, useRouter } from '@bprogress/next';
+import { useProgress } from '@bprogress/next';
+import { useRouter } from '@bprogress/next/app';
 
 export default function Home() {
   const router = useRouter();
@@ -68,14 +69,21 @@ export default function Home() {
       </Link>
       <button onClick={() => router.back()}>Back</button>
       <button onClick={() => router.forward()}>Forward</button>
-      <button onClick={() => router.push('/')}>Push same url</button>
+      <button
+        onClick={() =>
+          router.push('/', undefined, {
+            disableSameURL: false,
+          })
+        }
+      >
+        Push disableSameURL false
+      </button>
       <button onClick={() => router.push('/dashboard')}>Push Dashboard</button>
       <button onClick={() => router.refresh()}>Refresh</button>
       <button
         onClick={() =>
           router.push('/', undefined, {
             disableSameURL: true,
-            basePath: '/docs',
           })
         }
       >

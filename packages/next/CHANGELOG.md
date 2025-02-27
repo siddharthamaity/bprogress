@@ -1,5 +1,11 @@
 # @bprogress/next
 
+## 3.1.1
+
+### Minor Changes
+
+- feat: import AppProgressProvider and useRouter from /app and PagesProgressProvider from /pages
+
 ## 3.1.0
 
 ### Minor Changes

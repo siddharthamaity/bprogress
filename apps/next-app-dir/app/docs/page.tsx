@@ -1,7 +1,8 @@
 'use client';
 
 import Link from 'next/link';
-import { useProgress, useRouter } from '@bprogress/next';
+import { useProgress } from '@bprogress/next';
+import { useRouter } from '@bprogress/next/app';
 
 export default function Home() {
   const router = useRouter();

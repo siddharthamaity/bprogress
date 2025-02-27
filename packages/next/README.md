@@ -23,7 +23,7 @@ npm install @bprogress/next
 Import into your `/app/layout(.js/.jsx/.ts/.tsx)` folder.
 
 ```tsx
-import { AppProgressProvider as ProgressProvider } from '@bprogress/next';
+import { ProgressProvider } from '@bprogress/next/app';
 ```
 
 ### Pages Directory
@@ -31,7 +31,7 @@ import { AppProgressProvider as ProgressProvider } from '@bprogress/next';
 Import into your `/pages/_app(.js/.jsx/.ts/.tsx)` folder.
 
 ```tsx
-import { PagesProgressProvider as ProgressProvider } from '@bprogress/next';
+import { ProgressProvider } from '@bprogress/next/pages';
 ```
 
 ## Usage
@@ -50,7 +50,7 @@ First approach in a use client layout.
 // In /app/layout.tsx
 'use client';
 
-import { AppProgressProvider as ProgressProvider } from '@bprogress/next';
+import { ProgressProvider } from '@bprogress/next/app';
 
 export default function RootLayout({
   children,
@@ -82,7 +82,7 @@ Create a Providers component to wrap your application with all the components re
 // In /app/providers.tsx
 'use client';
 
-import { AppProgressProvider as ProgressProvider } from '@bprogress/next';
+import { ProgressProvider } from '@bprogress/next/app';
 
 const Providers = ({ children }: { children: React.ReactNode }) => {
   return (
@@ -131,7 +131,7 @@ export default function RootLayout({
 ```tsx
 // In /pages/_app.tsx
 import type { AppProps } from 'next/app';
-import { PagesProgressProvider as ProgressProvider } from '@bprogress/next';
+import { ProgressProvider } from '@bprogress/next/pages';
 
 export default function App({ Component, pageProps }: AppProps) {
   return (

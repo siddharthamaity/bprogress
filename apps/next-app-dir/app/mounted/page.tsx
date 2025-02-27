@@ -1,6 +1,6 @@
 'use client';
 
-import { useRouter } from '@bprogress/next';
+import { useRouter } from '@bprogress/next/app';
 // import { useRouter } from 'next/navigation';
 import { useEffect, useState } from 'react';
 

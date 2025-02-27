@@ -8,12 +8,11 @@
   "baseBranch": "main",
   "updateInternalDependencies": "patch",
   "ignore": [
-    "apps/remix-app",
-    "apps/pages-app-dir",
-    "apps/next-app-dir",
-    "apps/html",
-    "apps/docs",
-    "apps/create-react-app"
+    "next-app-dir",
+    "pages-app-dir",
+    "docs",
+    "create-react-app",
+    "remix-app"
   ],
   "publish": false,
   "version": {

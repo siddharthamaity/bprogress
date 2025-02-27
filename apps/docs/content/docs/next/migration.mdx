@@ -60,11 +60,11 @@ Now you don't import a component but a provider to use the progress bar.
 ```diff
 // App directory
 - import { AppProgressBar as ProgressBar } from 'next-nprogress-bar';
-+ import { AppProgressProvider as ProgressProvider } from '@bprogress/next';
++ import { ProgressProvider } from '@bprogress/next/app';
 
 // Pages directory
 - import { PagesProgressBar as ProgressBar } from 'next-nprogress-bar';
-+ import { PagesProgressProvider as ProgressProvider } from '@bprogress/next';
++ import { ProgressProvider } from '@bprogress/next/pages';
 ```
 
 ### Usage

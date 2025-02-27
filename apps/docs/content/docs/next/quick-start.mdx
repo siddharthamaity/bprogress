@@ -40,7 +40,7 @@ First approach in a use client layout.
 ```tsx title="app/layout.tsx"
 'use client';
 
-import { AppProgressProvider as ProgressProvider } from '@bprogress/next';
+import { ProgressProvider } from '@bprogress/next/app';
 
 export default function RootLayout({
   children,
@@ -71,7 +71,7 @@ Create a Providers component to wrap your application with all the components re
 ```tsx title="app/providers.tsx"
 'use client';
 
-import { AppProgressProvider as ProgressProvider } from '@bprogress/next';
+import { ProgressProvider } from '@bprogress/next/app';
 
 const Providers = ({ children }: { children: React.ReactNode }) => {
   return (
@@ -118,7 +118,7 @@ export default function RootLayout({
 
 ```tsx title="pages/_app.tsx"
 import type { AppProps } from 'next/app';
-import { PagesProgressProvider as ProgressProvider } from '@bprogress/next';
+import { ProgressProvider } from '@bprogress/next/pages';
 
 export default function App({ Component, pageProps }: AppProps) {
   return (

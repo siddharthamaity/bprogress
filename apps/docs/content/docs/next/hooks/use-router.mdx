@@ -44,6 +44,7 @@ useRouter(options?: RouterProgressOptions): AppRouterProgressInstance;
 | startPosition | number | undefined | The start position of the progress bar. |
 | disableSameURL | boolean | `true` | Disable the progress bar when the URL is the same. |
 | basePath | string | undefined | The base path if you use a `basePath` in your app. |
+| i18nPath | boolean | `false` | Takes into account the first parameter of the URL (e.g. /en) |
 | customRouter | () => AppRouterInstance | undefined | A custom router instance. |
 
 <Callout title="Note">
@@ -58,6 +59,7 @@ interface RouterProgressOptions {
   startPosition?: number;
   disableSameURL?: boolean;
   basePath?: string;
+  i18nPath?: boolean;
   customRouter?: () => AppRouterInstance;
 }
 ```
@@ -187,6 +189,7 @@ router.refresh({ startPosition: 0.3 });
 | startPosition | number | undefined | The start position of the progress bar. |
 | disableSameURL | boolean | `true` | Disable the progress bar when the URL is the same. |
 | basePath | string | undefined | The base path if you use a `basePath` in your app. |
+| i18nPath | boolean | `false` | Takes into account the first parameter of the URL (e.g. /en) |
 | _...customRouterOptions_ | any | undefined | Any custom options for the router, by default we use the next `NavigateOptions`. |
 
 <Callout title="Note">
@@ -201,6 +204,7 @@ interface RouterProgressOptions {
   startPosition?: number;
   disableSameURL?: boolean;
   basePath?: string;
+  i18nPath?: boolean;
 }
 ```
 

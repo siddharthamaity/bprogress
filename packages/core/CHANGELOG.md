@@ -1,5 +1,11 @@
 # @bprogress/core
 
+## 1.2.4
+
+### Patch Changes
+
+- feat: add iife build
+
 ## 1.2.3
 
 ### Patch Changes

@@ -3,8 +3,8 @@ import { copyFileSync } from 'fs';
 
 export default defineConfig({
   entry: ['src/index.ts'],
-  format: ['esm'],
-  globalName: 'BProgress',
+  format: ['esm', 'iife'],
+  globalName: 'BProgressJS',
   dts: true,
   outDir: 'dist',
   esbuildPlugins: [

@@ -27,9 +27,9 @@
     <button id="inc-btn">Increment</button>
     <button id="done-btn">Done</button>
 
-    <script src="../../packages/core/dist/index.global.js"></script>
-    <script>
-      const { BProgress } = BProgressJS;
+    <script type="module">
+      import { BProgress } from '../../packages/core/dist/index.js';
+
       console.log('BProgress', BProgress);
 
       BProgress.configure({

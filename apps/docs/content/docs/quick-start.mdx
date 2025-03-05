@@ -13,11 +13,24 @@ Import CSS in your `index.html` file.
 <link rel="stylesheet" type="text/css" href="https://unpkg.com/@bprogress/core/dist/index.css" />
 ```
 
-Import JavaScript in your `index.html` file.
+Import JavaScript in your `index.html` file using the modern import syntax:
 
 ```html
 <script type="module">
   import { BProgress } from 'https://unpkg.com/@bprogress/core/dist/index.js';
+
+  BProgress.configure({
+    ...
+  });
+</script>
+```
+
+Or you can add `BProgressJS` as a global variable using the legacy include:
+
+```html
+<script src="https://unpkg.com/@bprogress/core/dist/index.global.js"></script>
+<script>
+  const { BProgress } = BProgressJS;
 
   BProgress.configure({
     ...

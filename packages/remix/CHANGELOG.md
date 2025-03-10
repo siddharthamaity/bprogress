@@ -1,5 +1,11 @@
 # @bprogress/remix
 
+## 1.0.14
+
+### Patch Changes
+
+- chore: upgrade to `@bprogress/react@1.2.2`
+
 ## 1.0.13
 
 ### Patch Changes

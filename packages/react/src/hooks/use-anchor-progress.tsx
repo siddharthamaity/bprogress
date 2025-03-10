@@ -62,6 +62,8 @@ export function useAnchorProgress(
         | HTMLAnchorElement
         | SVGAElement;
 
+      if (anchorElement.hasAttribute('download')) return;
+
       const target = event.target as HTMLElement | Element;
       let preventProgress =
         target?.getAttribute('data-prevent-progress') === 'true' ||

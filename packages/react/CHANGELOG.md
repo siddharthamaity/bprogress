@@ -1,5 +1,11 @@
 # @bprogress/react
 
+## 1.2.2
+
+### Patch Changes
+
+- fix: prevent progress when the link has a `download` attribute
+
 ## 1.2.1
 
 ### Patch Changes

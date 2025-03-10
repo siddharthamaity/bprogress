@@ -35,7 +35,7 @@ const Dashboard = () => {
 
       <button
         onClick={() =>
-          router.push('/dashboard', undefined, {
+          router.push('/dashboard', {
             disableSameURL: true,
             basePath: '/docs',
           })

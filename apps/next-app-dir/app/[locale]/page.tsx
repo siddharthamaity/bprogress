@@ -48,6 +48,9 @@ export default function Home() {
         Dashboard
       </button>
 
+      <a href="file.txt" download>
+        Download
+      </a>
       <Link href="/">Same route</Link>
       <Link href="/?test=param">Sallow</Link>
       <Link href="/dashboard">Dashboard</Link>

@@ -48,6 +48,8 @@ export interface RouterActionsProgressOptions {
   disableSameURL?: boolean;
   basePath?: string;
   i18nPath?: boolean;
+  delay?: number;
+  stopDelay?: number;
 }
 
 /**

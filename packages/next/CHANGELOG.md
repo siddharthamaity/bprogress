@@ -1,5 +1,13 @@
 # @bprogress/next
 
+## 3.2.11
+
+### Patch Changes
+
+- chore: upgrade to `@bprogress/react@1.2.6`
+- add `delay` and `stopDelay` options to router options
+- use `disableSameURL`, `startPosition`, `delay` and `stopDelay` from the Provider props by default
+
 ## 3.2.10
 
 ### Patch Changes

@@ -1,5 +1,11 @@
 # @bprogress/react
 
+## 1.2.6
+
+### Patch Changes
+
+- feat: add `disableSameURL`, `startPosition`, `delay` and `stopDelay` to ProgressProvider
+
 ## 1.2.5
 
 ### Patch Changes

@@ -17,6 +17,8 @@ export interface NavigateActionsProgressOptions {
   showProgress?: boolean;
   startPosition?: number;
   disableSameURL?: boolean;
+  delay?: number;
+  stopDelay?: number;
 }
 
 /**

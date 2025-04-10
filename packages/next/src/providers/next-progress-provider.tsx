@@ -23,6 +23,11 @@ export const NextProgressProvider = ({
   style,
   disableStyle,
   nonce,
+  stopDelay,
+  delay,
+  startPosition,
+  disableSameURL,
+  shallowRouting,
   ...props
 }: NextProgressProviderComponentProps) => {
   return (
@@ -34,8 +39,20 @@ export const NextProgressProvider = ({
       style={style}
       disableStyle={disableStyle}
       nonce={nonce}
+      stopDelay={stopDelay}
+      delay={delay}
+      startPosition={startPosition}
+      disableSameURL={disableSameURL}
+      shallowRouting={shallowRouting}
     >
-      <ProgressComponent {...props} />
+      <ProgressComponent
+        stopDelay={stopDelay}
+        delay={delay}
+        startPosition={startPosition}
+        disableSameURL={disableSameURL}
+        shallowRouting={shallowRouting}
+        {...props}
+      />
       {children}
     </ProgressProvider>
   );

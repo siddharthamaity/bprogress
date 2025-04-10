@@ -1,7 +1,8 @@
 import { useCallback } from 'react';
 import { useNavigate as useRemixNavigate } from '@remix-run/react';
-import { BProgress, isSameURL } from '@bprogress/core';
+import { isSameURL } from '@bprogress/core';
 import { ProgressNavigateFunction, NavigateProgressOptions } from '../types';
+import { useProgress } from '@bprogress/react';
 
 /**
  * Custom hook that extends Remix's useNavigate with progress bar functionality.
@@ -14,6 +15,14 @@ export function useNavigate(
 ): ProgressNavigateFunction {
   // Destructure customNavigate (if provided) and default progress options.
   const { customNavigate, ...defaultProgressOptions } = options || {};
+  const {
+    start,
+    stop,
+    disableSameURL: providerDisableSameURL,
+    startPosition: providerStartPosition,
+    delay: providerDelay,
+    stopDelay: providerStopDelay,
+  } = useProgress();
 
   // Use a custom navigate function if provided, otherwise use Remix's built-in useNavigate.
   const useSelectedNavigate = useCallback(() => {
@@ -31,19 +40,33 @@ export function useNavigate(
       // Merge default progress options with the ones provided during the call.
       const mergedOptions = { ...defaultProgressOptions, ...progressOptions };
 
+      const localDisableSameURL =
+        mergedOptions.disableSameURL !== undefined
+          ? mergedOptions.disableSameURL
+          : providerDisableSameURL;
+      const localStartPosition =
+        mergedOptions.startPosition !== undefined
+          ? mergedOptions.startPosition
+          : providerStartPosition;
+      const localDelay =
+        mergedOptions.delay !== undefined ? mergedOptions.delay : providerDelay;
+      const localStopDelay =
+        mergedOptions.stopDelay !== undefined
+          ? mergedOptions.stopDelay
+          : providerStopDelay;
+
       // Case 1: Navigation by delta (number)
       if (typeof to === 'number') {
         if (mergedOptions?.showProgress !== false) {
           // Set starting position if specified.
-          if (mergedOptions?.startPosition && mergedOptions.startPosition > 0) {
-            BProgress.set(mergedOptions.startPosition);
-          }
-          BProgress.start();
+          start(localStartPosition, localDelay);
         }
         // Perform delta navigation
         const result = navigate(to as number);
         if (mergedOptions?.showProgress !== false) {
-          BProgress.done();
+          setTimeout(() => {
+            stop(localStopDelay);
+          }, localDelay || 0);
         }
         return result;
       } else {
@@ -71,16 +94,13 @@ export function useNavigate(
         const sameURL = isSameURL(targetUrl, currentUrl);
 
         // If target URL is the same and disableSameURL is enabled, navigate without progress.
-        if (sameURL && mergedOptions?.disableSameURL !== false) {
+        if (sameURL && localDisableSameURL) {
           return navigate(to, navOptions);
         }
 
         // Start the progress bar if enabled.
         if (mergedOptions?.showProgress !== false) {
-          if (mergedOptions?.startPosition && mergedOptions.startPosition > 0) {
-            BProgress.set(mergedOptions.startPosition);
-          }
-          BProgress.start();
+          start(localStartPosition, localDelay);
         }
 
         // Execute the navigation using Remix's navigate function.
@@ -88,13 +108,24 @@ export function useNavigate(
 
         // If navigating to the same URL, finish the progress bar immediately.
         if (sameURL && mergedOptions?.showProgress !== false) {
-          BProgress.done();
+          setTimeout(() => {
+            stop(localStopDelay);
+          }, localDelay || 0);
         }
 
         return result;
       }
     },
-    [navigate, defaultProgressOptions],
+    [
+      defaultProgressOptions,
+      providerDisableSameURL,
+      providerStartPosition,
+      providerDelay,
+      providerStopDelay,
+      navigate,
+      start,
+      stop,
+    ],
   ) as ProgressNavigateFunction;
 
   return enhancedNavigate;

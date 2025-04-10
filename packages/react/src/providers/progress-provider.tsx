@@ -29,6 +29,11 @@ export const ProgressProvider = ({
   style,
   disableStyle = false,
   nonce,
+  shallowRouting = false,
+  disableSameURL = true,
+  startPosition = 0,
+  delay = 0,
+  stopDelay = 0,
 }: ProgressProviderProps) => {
   const timer = useRef<NodeJS.Timeout | null>(null);
   const isAutoStopDisabled = useRef(false);
@@ -126,6 +131,11 @@ export const ProgressProvider = ({
         isAutoStopDisabled,
         disableAutoStop,
         enableAutoStop,
+        shallowRouting,
+        disableSameURL,
+        startPosition,
+        delay,
+        stopDelay,
       }}
     >
       {!disableStyle ? styles : null}

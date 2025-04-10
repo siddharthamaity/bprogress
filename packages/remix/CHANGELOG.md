@@ -1,5 +1,13 @@
 # @bprogress/remix
 
+## 1.0.18
+
+### Patch Changes
+
+- chore: upgrade to `@bprogress/react@1.2.6`
+- add `delay` and `stopDelay` options to router options
+- use `disableSameURL`, `startPosition`, `delay` and `stopDelay` from the Provider props by default
+
 ## 1.0.17
 
 ### Patch Changes

@@ -32,6 +32,11 @@ export interface ProgressContextValue {
   isAutoStopDisabled: React.RefObject<boolean>;
   disableAutoStop: () => void;
   enableAutoStop: () => void;
+  shallowRouting: boolean;
+  disableSameURL: boolean;
+  startPosition: number;
+  delay: number;
+  stopDelay: number;
 }
 
 /**
@@ -55,6 +60,10 @@ export type ProgressComponentProps<T extends React.ElementType = 'div'> = {
  * @param style Custom css - @default undefined
  * @param disableStyle Disable default css - @default false
  * @param nonce Custom nonce for Content-Security-Policy directives - @default undefined
+ * @param shallowRouting If the progress bar is not displayed when you use shallow routing - @default false
+ * @param startPosition The position of the progress bar at the start of the page load - @default 0
+ * @param delay When the page loads faster than the progress bar, it does not display - @default 0
+ * @param stopDelay Delay to stop the progress bar - @default 0
  */
 export interface ProgressProviderProps {
   children?: React.ReactNode;
@@ -65,6 +74,11 @@ export interface ProgressProviderProps {
   style?: string;
   disableStyle?: boolean;
   nonce?: string;
+  shallowRouting?: boolean;
+  disableSameURL?: boolean;
+  startPosition?: number;
+  delay?: number;
+  stopDelay?: number;
 }
 
 /**

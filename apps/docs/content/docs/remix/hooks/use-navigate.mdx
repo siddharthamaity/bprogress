@@ -25,12 +25,14 @@ const navigate = useNavigate();
 useNavigate(options?: NavigateProgressOptions): ProgressNavigateFunction
 ```
 
-| Name | Type | Default | Description |
-| ---- | ---- | ------- | ----------- |
-| showProgress | boolean | `true` | Show the progress bar. |
-| startPosition | number | undefined | The start position of the progress bar. |
-| disableSameURL | boolean | `true` | Disable the progress bar when the URL is the same. |
-| customNavigate | () => NavigateFunction | undefined | A custom navigate instance. |
+| Name           | Type                   | Default   | Description                                        |
+| -------------- | ---------------------- | --------- | -------------------------------------------------- |
+| showProgress   | boolean                | `true`    | Show the progress bar.                             |
+| startPosition  | number                 | undefined | The start position of the progress bar.            |
+| disableSameURL | boolean                | `true`    | Disable the progress bar when the URL is the same. |
+| delay          | number                 | undefined | The delay before the progress bar starts.          |
+| stopDelay      | number                 | undefined | The delay before the progress bar stops.           |
+| customNavigate | () => NavigateFunction | undefined | A custom navigate instance.                        |
 
 ### NavigateProgressOptions
 
@@ -39,17 +41,22 @@ interface NavigateProgressOptions {
   showProgress?: boolean;
   startPosition?: number;
   disableSameURL?: boolean;
+  delay?: number;
+  stopDelay?: number;
   customNavigate?: () => NavigateFunction;
 }
 ```
 
 <Callout title="Note">
-  By default, if you do not specify any options when using navigate, the options defined during the initialization of the `useNavigate` hook will be applied. However, if you provide specific options when using navigate, these will take precedence and override the default options set in the hook.
+  By default, if you do not specify any options when using navigate, the options
+  defined during the initialization of the `useNavigate` hook will be applied.
+  However, if you provide specific options when using navigate, these will take
+  precedence and override the default options set in the hook.
 </Callout>
 
 ## Use navigate
 
-### Usage 
+### Usage
 
 #### delta
 
@@ -79,4 +86,3 @@ interface ProgressNavigateFunction {
   (delta: number, progressOptions?: NavigateActionsProgressOptions): void;
 }
 ```
-

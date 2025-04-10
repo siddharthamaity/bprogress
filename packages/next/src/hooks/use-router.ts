@@ -8,8 +8,9 @@ import type {
 } from '../types';
 import { useRouter as useNextRouter } from 'next/navigation.js';
 import { useRef } from 'react';
-import { BProgress, isSameURL } from '@bprogress/core';
+import { isSameURL } from '@bprogress/core';
 import { AppRouterInstance as NextAppRouterInstance } from 'next/dist/shared/lib/app-router-context.shared-runtime';
+import { useProgress } from '@bprogress/react';
 
 /**
  * Helper function that removes the first path segment from a URL.
@@ -44,6 +45,14 @@ export function useRouter<
     ? customRouter()
     : // eslint-disable-next-line react-hooks/rules-of-hooks
       useNextRouter();
+  const {
+    start,
+    stop,
+    disableSameURL: providerDisableSameURL,
+    startPosition: providerStartPosition,
+    delay: providerDelay,
+    stopDelay: providerStopDelay,
+  } = useProgress();
 
   // Using a ref to keep a stable reference of the extended router.
   const extendedRouterRef = useRef<AppRouterProgressInstance<
@@ -65,6 +74,8 @@ export function useRouter<
         disableSameURL,
         basePath,
         i18nPath,
+        delay,
+        stopDelay,
         ...routerOpts
       } = options || {};
       const progressOpts = {
@@ -74,7 +85,24 @@ export function useRouter<
         disableSameURL,
         basePath,
         i18nPath,
+        delay,
+        stopDelay,
       };
+
+      const localDisableSameURL =
+        progressOpts.disableSameURL !== undefined
+          ? progressOpts.disableSameURL
+          : providerDisableSameURL;
+      const localStartPosition =
+        progressOpts.startPosition !== undefined
+          ? progressOpts.startPosition
+          : providerStartPosition;
+      const localDelay =
+        progressOpts.delay !== undefined ? progressOpts.delay : providerDelay;
+      const localStopDelay =
+        progressOpts.stopDelay !== undefined
+          ? progressOpts.stopDelay
+          : providerStopDelay;
 
       if (progressOpts.showProgress === false) {
         return fn(href, routerOpts);
@@ -95,17 +123,15 @@ export function useRouter<
 
       const sameURL = isSameURL(targetUrl, currentUrl);
 
-      if (sameURL && progressOpts.disableSameURL !== false) {
+      if (sameURL && localDisableSameURL) {
         return fn(href, routerOpts);
       }
 
-      if (progressOpts.startPosition && progressOpts.startPosition > 0) {
-        BProgress.set(progressOpts.startPosition);
-      }
+      start(localStartPosition, localDelay);
 
-      BProgress.start();
-
-      if (sameURL) BProgress.done();
+      setTimeout(() => {
+        if (sameURL) stop(localStopDelay);
+      }, localDelay || 0);
 
       return fn(href, routerOpts);
     };
@@ -122,6 +148,8 @@ export function useRouter<
         disableSameURL,
         basePath,
         i18nPath,
+        delay,
+        stopDelay,
         ...routerOpts
       } = options || {};
       const progressOpts = {
@@ -131,21 +159,32 @@ export function useRouter<
         disableSameURL,
         basePath,
         i18nPath,
+        delay,
+        stopDelay,
       };
+
+      const localStartPosition =
+        progressOpts.startPosition !== undefined
+          ? progressOpts.startPosition
+          : providerStartPosition;
+      const localDelay =
+        progressOpts.delay !== undefined ? progressOpts.delay : providerDelay;
+      const localStopDelay =
+        progressOpts.stopDelay !== undefined
+          ? progressOpts.stopDelay
+          : providerStopDelay;
 
       if (progressOpts.showProgress === false) {
         return fn(routerOpts);
       }
 
-      if (progressOpts.startPosition && progressOpts.startPosition > 0) {
-        BProgress.set(progressOpts.startPosition);
-      }
-
-      BProgress.start();
+      start(localStartPosition, localDelay);
 
       const result = fn(routerOpts);
 
-      BProgress.done();
+      setTimeout(() => {
+        stop(localStopDelay);
+      }, localDelay || 0);
 
       return result;
     };

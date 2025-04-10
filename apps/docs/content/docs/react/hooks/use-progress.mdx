@@ -32,6 +32,11 @@ const {
   isAutoStopDisabled,
   disableAutoStop,
   enableAutoStop,
+  shallowRouting,
+  disableSameURL,
+  startPosition,
+  delay,
+  stopDelay,
 } = useProgress();
 ```
 
@@ -169,5 +174,10 @@ interface ProgressContextValue {
   isAutoStopDisabled: React.RefObject<boolean>;
   disableAutoStop: () => void;
   enableAutoStop: () => void;
+  shallowRouting: boolean;
+  disableSameURL: boolean;
+  startPosition: number;
+  delay: number;
+  stopDelay: number;
 }
 ```

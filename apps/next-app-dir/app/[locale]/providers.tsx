@@ -20,8 +20,8 @@ const Providers = ({ children }: { children: React.ReactNode }) => {
         direction: 'rtl',
       }}
       spinnerPosition="top-right"
-      // stopDelay={1000}
-      // delay={1000}
+      stopDelay={1000}
+      delay={1000}
       disableSameURL
       startOnLoad
     >

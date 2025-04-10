@@ -15,7 +15,8 @@ description: Use `useRouter` hook
 The app directory router doesn't manage routes like the page directory router. So we need a custom router that extends the Next.js router and enables the progress bar.
 
 <Callout type="warn" title="Warning">
-  The `useRouter` hook can only be used in the app directory. It will not work in the pages directory.
+  The `useRouter` hook can only be used in the app directory. It will not work
+  in the pages directory.
 </Callout>
 
 ## Import
@@ -38,17 +39,23 @@ const router = useRouter();
 useRouter(options?: RouterProgressOptions): AppRouterProgressInstance;
 ```
 
-| Name | Type | Default | Description |
-| ---- | ---- | ------- | ----------- |
-| showProgress | boolean | `true` | Show the progress bar. |
-| startPosition | number | undefined | The start position of the progress bar. |
-| disableSameURL | boolean | `true` | Disable the progress bar when the URL is the same. |
-| basePath | string | undefined | The base path if you use a `basePath` in your app. |
-| i18nPath | boolean | `false` | Takes into account the first parameter of the URL (e.g. /en) |
-| customRouter | () => AppRouterInstance | undefined | A custom router instance. |
+| Name           | Type                    | Default   | Description                                                  |
+| -------------- | ----------------------- | --------- | ------------------------------------------------------------ |
+| showProgress   | boolean                 | `true`    | Show the progress bar.                                       |
+| startPosition  | number                  | undefined | The start position of the progress bar.                      |
+| disableSameURL | boolean                 | `true`    | Disable the progress bar when the URL is the same.           |
+| basePath       | string                  | undefined | The base path if you use a `basePath` in your app.           |
+| i18nPath       | boolean                 | `false`   | Takes into account the first parameter of the URL (e.g. /en) |
+| delay          | number                  | undefined | The delay before the progress bar starts.                    |
+| stopDelay      | number                  | undefined | The delay before the progress bar stops.                     |
+| customRouter   | () => AppRouterInstance | undefined | A custom router instance.                                    |
 
 <Callout title="Note">
-  By default, if you do not specify any options when calling a router method, the options defined during the initialization of the `useRouter` hook will be applied. However, if you provide specific options in the method call (`push`, `replace`, `back`, `refresh`), these will take precedence and override the default options set in the hook.
+  By default, if you do not specify any options when calling a router method,
+  the options defined during the initialization of the `useRouter` hook will be
+  applied. However, if you provide specific options in the method call (`push`,
+  `replace`, `back`, `refresh`), these will take precedence and override the
+  default options set in the hook.
 </Callout>
 
 ### RouterProgressOptions
@@ -180,20 +187,23 @@ router.forward({ startPosition: 0.3 });
 router.refresh({ startPosition: 0.3 });
 ```
 
-
 ### Types
 
-| Name | Type | Default | Description |
-| ---- | ---- | ------- | ----------- |
-| showProgress | boolean | `true` | Show the progress bar. |
-| startPosition | number | undefined | The start position of the progress bar. |
-| disableSameURL | boolean | `true` | Disable the progress bar when the URL is the same. |
-| basePath | string | undefined | The base path if you use a `basePath` in your app. |
-| i18nPath | boolean | `false` | Takes into account the first parameter of the URL (e.g. /en) |
-| _...customRouterOptions_ | any | undefined | Any custom options for the router, by default we use the next `NavigateOptions`. |
+| Name                     | Type    | Default   | Description                                                                      |
+| ------------------------ | ------- | --------- | -------------------------------------------------------------------------------- |
+| showProgress             | boolean | `true`    | Show the progress bar.                                                           |
+| startPosition            | number  | undefined | The start position of the progress bar.                                          |
+| disableSameURL           | boolean | `true`    | Disable the progress bar when the URL is the same.                               |
+| basePath                 | string  | undefined | The base path if you use a `basePath` in your app.                               |
+| i18nPath                 | boolean | `false`   | Takes into account the first parameter of the URL (e.g. /en)                     |
+| delay                    | number  | undefined | The delay before the progress bar starts.                                        |
+| stopDelay                | number  | undefined | The delay before the progress bar stops.                                         |
+| _...customRouterOptions_ | any     | undefined | Any custom options for the router, by default we use the next `NavigateOptions`. |
 
 <Callout title="Note">
-  The `showProgress` option set to `false` disables the progress bar. However, if you don't want to see the progress bar during a router action, we recommend you use the Next.js router directly.
+  The `showProgress` option set to `false` disables the progress bar. However,
+  if you don't want to see the progress bar during a router action, we recommend
+  you use the Next.js router directly.
 </Callout>
 
 #### RouterProgressOptions
@@ -205,6 +215,8 @@ interface RouterProgressOptions {
   disableSameURL?: boolean;
   basePath?: string;
   i18nPath?: boolean;
+  delay?: number;
+  stopDelay?: number;
 }
 ```
 
@@ -220,10 +232,14 @@ export default function Home() {
   });
 
   return (
-    <button onClick={() => router.push('/about', {
-      startPosition: 0.3,
-      locale: 'en',
-    })}>
+    <button
+      onClick={() =>
+        router.push('/about', {
+          startPosition: 0.3,
+          locale: 'en',
+        })
+      }
+    >
       Go to about page
     </button>
   );

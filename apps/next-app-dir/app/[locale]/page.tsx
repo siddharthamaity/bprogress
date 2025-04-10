@@ -1,8 +1,8 @@
-"use client";
+'use client';
 
-import { Link } from "@/i18n/navigation";
-import { useProgress, useRouter } from "@bprogress/next";
-import { useRouter as useNextIntlRouter } from "@/i18n/navigation";
+import { Link } from '@/i18n/navigation';
+import { useProgress, useRouter } from '@bprogress/next';
+import { useRouter as useNextIntlRouter } from '@/i18n/navigation';
 
 export default function Home() {
   const router = useRouter({
@@ -17,7 +17,7 @@ export default function Home() {
 
       <button
         className="default"
-        onClick={() => console.log("getOptions", getOptions())}
+        onClick={() => console.log('getOptions', getOptions())}
       >
         getOptions
       </button>
@@ -43,7 +43,7 @@ export default function Home() {
         Resume progress
       </button>
 
-      <button onClick={() => nextIntlRouter.push("/dashboard")}>
+      <button onClick={() => nextIntlRouter.push('/dashboard')}>
         Dashboard
       </button>
 
@@ -54,11 +54,12 @@ export default function Home() {
       <Link href="/?test=param">Sallow</Link>
       <Link href="/dashboard">Dashboard</Link>
       <Link href="/load">Load</Link>
+      <button onClick={() => router.push('/load')}>Load</button>
       <Link
         href="/dashboard"
         style={{
-          display: "flex",
-          flexDirection: "column",
+          display: 'flex',
+          flexDirection: 'column',
         }}
       >
         <span>Dashboard</span>
@@ -81,7 +82,7 @@ export default function Home() {
       <button onClick={() => router.forward()}>Forward</button>
       <button
         onClick={() =>
-          router.push("/", {
+          router.push('/', {
             disableSameURL: false,
             i18nPath: true,
           })
@@ -91,8 +92,8 @@ export default function Home() {
       </button>
       <button
         onClick={() =>
-          router.push("/dashboard", {
-            locale: "en",
+          router.push('/dashboard', {
+            locale: 'en',
             i18nPath: true,
           })
         }
@@ -102,7 +103,7 @@ export default function Home() {
       <button onClick={() => router.refresh()}>Refresh</button>
       <button
         onClick={() =>
-          router.push("/", {
+          router.push('/', {
             disableSameURL: true,
             i18nPath: true,
           })
@@ -112,16 +113,16 @@ export default function Home() {
       </button>
       <button
         className="replace"
-        onClick={() => router.replace("/dashboard", { i18nPath: true })}
+        onClick={() => router.replace('/dashboard', { i18nPath: true })}
       >
         Replace Dashboard
       </button>
-      <button onClick={() => router.push("/?test=param", { i18nPath: true })}>
+      <button onClick={() => router.push('/?test=param', { i18nPath: true })}>
         Push with param
       </button>
       <button
         onClick={() =>
-          router.push("/dashboard", {
+          router.push('/dashboard', {
             showProgress: false,
             i18nPath: true,
           })

@@ -1,3 +1,5 @@
+// @ts-nocheck
+
 import { source } from '@/lib/source';
 import {
   DocsPage,

@@ -1,5 +1,12 @@
 # @bprogress/vue
 
+## 1.1.5
+
+### Patch Changes
+
+- chore: change repo link
+- chore: upgrade to `@bprogress/core@1.3.4`
+
 ## 1.1.4
 
 ### Patch Changes

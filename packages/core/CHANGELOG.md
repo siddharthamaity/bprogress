@@ -1,5 +1,11 @@
 # @bprogress/core
 
+## 1.3.4
+
+### Patch Changes
+
+- chore: change repo link
+
 ## 1.3.3
 
 ### Patch Changes

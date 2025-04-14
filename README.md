@@ -14,11 +14,11 @@ It helps users understand that a new page or content is being loaded, making nav
 
 | Package     | Lien                                                               | Changelog                                                                                 |
 | ----------- | ------------------------------------------------------------------ | ----------------------------------------------------------------------------------------- |
-| **Core**    | [@bprogress/core](https://www.npmjs.com/package/@bprogress/core)   | [CHANGELOG](https://github.com/Skyleen77/bprogress/tree/main/packages/core/CHANGELOG.md)  |
-| **React**   | [@bprogress/react](https://www.npmjs.com/package/@bprogress/react) | [CHANGELOG](https://github.com/Skyleen77/bprogress/tree/main/packages/react/CHANGELOG.md) |
-| **Next.js** | [@bprogress/next](https://www.npmjs.com/package/@bprogress/next)   | [CHANGELOG](https://github.com/Skyleen77/bprogress/tree/main/packages/next/CHANGELOG.md)  |
-| **Remix**   | [@bprogress/remix](https://www.npmjs.com/package/@bprogress/remix) | [CHANGELOG](https://github.com/Skyleen77/bprogress/tree/main/packages/remix/CHANGELOG.md) |
-| **Vue**     | [@bprogress/vue](https://www.npmjs.com/package/@bprogress/vue)     | [CHANGELOG](https://github.com/Skyleen77/bprogress/tree/main/packages/vue/CHANGELOG.md)   |
+| **Core**    | [@bprogress/core](https://www.npmjs.com/package/@bprogress/core)   | [CHANGELOG](https://github.com/imskyleen/bprogress/tree/main/packages/core/CHANGELOG.md)  |
+| **React**   | [@bprogress/react](https://www.npmjs.com/package/@bprogress/react) | [CHANGELOG](https://github.com/imskyleen/bprogress/tree/main/packages/react/CHANGELOG.md) |
+| **Next.js** | [@bprogress/next](https://www.npmjs.com/package/@bprogress/next)   | [CHANGELOG](https://github.com/imskyleen/bprogress/tree/main/packages/next/CHANGELOG.md)  |
+| **Remix**   | [@bprogress/remix](https://www.npmjs.com/package/@bprogress/remix) | [CHANGELOG](https://github.com/imskyleen/bprogress/tree/main/packages/remix/CHANGELOG.md) |
+| **Vue**     | [@bprogress/vue](https://www.npmjs.com/package/@bprogress/vue)     | [CHANGELOG](https://github.com/imskyleen/bprogress/tree/main/packages/vue/CHANGELOG.md)   |
 
 ## Documentation
 
@@ -26,7 +26,7 @@ See the [official documentation](https://bprogress.vercel.app/docs) for more inf
 
 ## Issues
 
-If you encounter any problems, do not hesitate to [open an issue](https://github.com/Skyleen77/bprogress/issues) or make a PR [here](https://github.com/Skyleen77/bprogress).
+If you encounter any problems, do not hesitate to [open an issue](https://github.com/imskyleen/bprogress/issues) or make a PR [here](https://github.com/imskyleen/bprogress).
 
 ## License
 

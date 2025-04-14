@@ -23,7 +23,7 @@ export const Header = () => {
               asChild
             >
               <Link
-                href="https://github.com/Skyleen77/bprogress"
+                href="https://github.com/imskyleen/bprogress"
                 target="_blank"
                 rel="noreferrer"
               >

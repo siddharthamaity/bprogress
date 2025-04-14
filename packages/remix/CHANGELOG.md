@@ -1,5 +1,13 @@
 # @bprogress/remix
 
+## 1.0.19
+
+### Patch Changes
+
+- chore: change repo link
+- chore: upgrade to `@bprogress/core@1.3.4`
+- chore: upgrade to `@bprogress/react@1.2.7`
+
 ## 1.0.18
 
 ### Patch Changes

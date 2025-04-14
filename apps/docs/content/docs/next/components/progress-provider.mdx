@@ -4,7 +4,7 @@ description: How to use ProgressProvider
 ---
 
 import { ProgressTypeTable } from '../../../../components/progress-type-table';
-import { SiCsswizardry, SiNextdotjs } from "react-icons/si";
+import { SiCsswizardry, SiNextdotjs } from 'react-icons/si';
 
 Import the correct `ProgressProvider` according to your Next.js configuration.
 
@@ -21,28 +21,54 @@ import { ProgressProvider } from '@bprogress/next/pages';
 ## Usage
 
 ```tsx
-<ProgressProvider>
-  ...
-</ProgressProvider>
+<ProgressProvider>...</ProgressProvider>
 ```
 
-## Props 
+## Props
 
 ### Common props
 
 <ProgressTypeTable
-  displayTypes={["children", "height", "color", "options", "spinnerPosition", "shallowRouting", "startPosition", "delay", "disableSameURL", "stopDelay", "nonce", "memo", "style", "disableStyle", "shouldCompareComplexProps"]}
+  displayTypes={[
+    'children',
+    'height',
+    'color',
+    'options',
+    'spinnerPosition',
+    'shallowRouting',
+    'startPosition',
+    'delay',
+    'disableSameURL',
+    'stopDelay',
+    'nonce',
+    'memo',
+    'style',
+    'disableStyle',
+    'shouldCompareComplexProps',
+  ]}
 />
 
 ### AppProgressBar props
 
 <ProgressTypeTable
-  displayTypes={["targetPreprocessor", "disableAnchorClick", "startOnLoad"]}
+  displayTypes={['targetPreprocessor', 'disableAnchorClick', 'startOnLoad']}
 />
 
 ### Links
 
 <Cards>
-  <Card external icon={<SiCsswizardry />} title="BProgress CSS" href="https://github.com/Skyleen77/bprogress/blob/main/packages/core/index.css" description="Default BProgress CSS" />
-  <Card external icon={<SiNextdotjs />} title="Next.js docs" href="https://nextjs.org/docs/pages/building-your-application/routing/linking-and-navigating#shallow-routing" description="Shallow routing on Next.js" />
+  <Card
+    external
+    icon={<SiCsswizardry />}
+    title="BProgress CSS"
+    href="https://github.com/imskyleen/bprogress/blob/main/packages/core/index.css"
+    description="Default BProgress CSS"
+  />
+  <Card
+    external
+    icon={<SiNextdotjs />}
+    title="Next.js docs"
+    href="https://nextjs.org/docs/pages/building-your-application/routing/linking-and-navigating#shallow-routing"
+    description="Shallow routing on Next.js"
+  />
 </Cards>

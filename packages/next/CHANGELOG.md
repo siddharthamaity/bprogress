@@ -1,5 +1,13 @@
 # @bprogress/next
 
+## 3.2.12
+
+### Patch Changes
+
+- chore: change repo link
+- chore: upgrade to `@bprogress/core@1.3.4`
+- chore: upgrade to `@bprogress/react@1.2.7`
+
 ## 3.2.11
 
 ### Patch Changes

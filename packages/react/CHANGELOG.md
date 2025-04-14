@@ -1,5 +1,12 @@
 # @bprogress/react
 
+## 1.2.7
+
+### Patch Changes
+
+- chore: change repo link
+- chore: upgrade to `@bprogress/core@1.3.4`
+
 ## 1.2.6
 
 ### Patch Changes

@@ -68,7 +68,7 @@ Go to the [documentation](https://bprogress.vercel.app/docs/react/installation) 
 
 ## Issues
 
-If you encounter any problems, do not hesitate to [open an issue](https://github.com/Skyleen77/bprogress/issues) or make a PR [here](https://github.com/Skyleen77/bprogress).
+If you encounter any problems, do not hesitate to [open an issue](https://github.com/imskyleen/bprogress/issues) or make a PR [here](https://github.com/imskyleen/bprogress).
 
 ## LICENSE
 

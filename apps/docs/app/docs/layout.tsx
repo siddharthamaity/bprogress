@@ -4,7 +4,11 @@ import { source } from '@/lib/source';
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (
-    <DocsLayout tree={source.pageTree} {...baseOptions}>
+    <DocsLayout
+      githubUrl="https://github.com/imskyleen/bprogress"
+      tree={source.pageTree}
+      {...baseOptions}
+    >
       {children}
     </DocsLayout>
   );
